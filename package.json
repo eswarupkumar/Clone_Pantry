@@ -19,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/eswarupkumar/Clone_Pantry/issues"
   },
-  "homepage": "https://github.com/eswarupkumar/Clone_Pantry#readme"
+  "homepage": "https://github.com/eswarupkumar/Clone_Pantry#readme",
+  "dependencies": {
+    "dotenv": "^14.2.0",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.7",
+    "nodemon": "^2.0.15"
+  }
 }
