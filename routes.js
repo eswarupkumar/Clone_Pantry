@@ -8,7 +8,6 @@ router.post("/table/create/:tableName", async (req, res) => {
   await table
     .create({
       name: tableName,
-      box: {},
     })
     .then((data) => {
       res
@@ -73,9 +72,23 @@ router.get("/table/:tableId/box/:boxName", async (req, res) => {
 router.delete("/table/:tableId/box/:boxName", async (req, res) => {
   const { tableId, boxName } = req.params;
   await table
-    .findByIdAndUpdate(tableId, { $pull: { box: { name: boxName } } })
+    .findById(tableId)
     .then((data) => {
-      res.status(200).json(`Box deleted successfully !`);
+      const boxes = data["box"];
+      for (var i = 0; i < boxes.length; i++) {
+        if (boxes[i].name == boxName) {
+          table
+            .findByIdAndUpdate(tableId, { $pull: { box: { name: boxName } } })
+            .then((data) => {
+              res.status(200).json(`Box deleted successfully !`);
+            })
+            .catch((err) => {
+              res.status(400).json("Unable to delete box!");
+            });
+          break;
+        }
+      }
+      // res.status(400).json("Didn't found the box with given name!");
     })
     .catch((err) => {
       res.status(400).json("Unable to delete box!");

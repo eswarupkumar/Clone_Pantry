@@ -16,7 +16,7 @@ const TableSchema = new Schema({
     default: "",
     required: false,
   },
-  box: [{}],
+  box: [],
   createdAt: {
     type: Number,
   },
