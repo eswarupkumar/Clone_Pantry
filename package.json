@@ -1,0 +1,23 @@
+{
+  "name": "table",
+  "version": "1.0.0",
+  "description": "Clone of pantry.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eswarupkumar/Clone_Pantry.git"
+  },
+  "keywords": [
+    "Api",
+    "Clone"
+  ],
+  "author": "E Swarup Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eswarupkumar/Clone_Pantry/issues"
+  },
+  "homepage": "https://github.com/eswarupkumar/Clone_Pantry#readme"
+}
